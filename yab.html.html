@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I'm Sorry my baby yab 💖</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffd1dc, #ffe6f0);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    margin: 70px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(255,105,180,0.3);
+}
+
+h1 {
+    color: #ff4da6;
+    font-size: 32px;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+button {
+    background: #ff66b2;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff3399;
+    transform: scale(1.1);
+}
+
+/* Kitty Section */
+#kittySection {
+    display: none;
+    margin-top: 30px;
+    animation: popUp 1s ease forwards;
+}
+
+#kitty {
+    width: 280px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes popUp {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    font-size: 25px;
+    animation: float 4s linear forwards;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-400px); opacity: 0; }
+}
+
+/* Kiss animation */
+#kiss {
+    font-size: 40px;
+    animation: kissMove 2s infinite;
+}
+
+@keyframes kissMove {
+    0% { transform: translateX(0); opacity: 0; }
+    50% { transform: translateX(30px); opacity: 1; }
+    100% { transform: translateX(60px); opacity: 0; }
+}
+</style>
+</head>
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<body>
+
+<div class="card">
+    <h1>I'm so so sorry my baby yab 💖</h1>
+
+    <p>
+        baby naiintindihan ko yung selos at sakit na nararamdaman mo. aminado akong may mga kilos ako na naka-trigger ng ganyang pakiramdam sayo, sorry kung naparamdam ko sayo na parang wala lang yung mga away natin at yung mga promise ko, hindi yun yung gusto kong iparamdam sayo. naiintindihan ko yung nararamdaman mo, hindi ko sinasawalang bahala lg yung selos at discomfort mo, valid yun ikaw yung mahalaga sakin, importante ka sakin at gusto kong matuto at mag-adjust para hindi ka na masaktan at ayokong dumating sa point na pakiramdam mo pinababayaan o binabalewala kita. susubukan kong maging mas maingat sa mga kilos ko, lalo na sa mga bagay na alam kong nakakasakit at hindi ka komportable. gusto kong ayusin to kasama ka, hindi laban sayo. SORRY BABY
+    </p>
+
+    <button onclick="showKitty()">Click if you forgive me 💕</button>
+
+    <div id="kittySection">
+        <h2>Yaaay!! I love you sooo much 😭💖</h2>
+        <img id="kitty" src="https://media.tenor.com/JRDTTzY75hQAAAAC/hello-kitty-kiss.gif" alt="Hello Kitty">
+        <div id="kiss">💋</div>
+    </div>
+</div>
+
+<script>
+function showKitty() {
+    document.getElementById("kittySection").style.display = "block";
+	
+	document.getElementById("bgMusic").play();
+
+    // Floating hearts explosion
+    for (let i = 0; i < 30; i++) {
+        let heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = window.innerHeight - 50 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+}
+</script>
+
+</body>
+</html>
